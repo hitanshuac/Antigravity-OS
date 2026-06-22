@@ -1,0 +1,16 @@
+[
+    {
+        "timestamp": "2026-06-21",
+        "error_type": "SyntaxError",
+        "component": "app.py / src.ui.dashboard.py",
+        "message": "Dangling else: and unmatched parenthesis ) due to manual code reconstruction",
+        "resolution": "Removed the unmatched elements and correctly formatted the Streamlit layout blocks."
+    },
+    {
+        "timestamp": "2026-06-21",
+        "error_type": "StreamlitAPIException",
+        "component": "src.ui.components.py",
+        "message": "The value is not a valid emoji. Shortcodes are not allowed, please use a single character instead.",
+        "resolution": "Removed empty icon=\"\" arguments from st.warning() and st.toast()."
+    }
+]

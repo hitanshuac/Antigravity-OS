@@ -1,0 +1,16 @@
+# Virtual Environments
+.env
+.venv
+venv/
+env/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+
+# OS / Temporary files
+.tmp_antigravity_*
+.DS_Store

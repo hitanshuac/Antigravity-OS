@@ -1,0 +1,1 @@
+Instruct the agent to use the GitHub CLI (`gh search repos <keywords>`) to find existing open-source solutions before writing custom code. The agent must halt and ask for human approval before proceeding.
