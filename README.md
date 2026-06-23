@@ -25,8 +25,15 @@ The brainstem and execution state machine are located in `src/orchestrator/`.
 - `engine.py`: Contains the `ReActEngine`, a deterministic state machine orchestrating Reason + Act iterations with a 3-strike verification loop and Git rollback constraints.
 - `llm.py`: Contains the `UniversalLLMClient` adapter, supporting OpenAI, Groq, OpenRouter, and NVIDIA NIM via a unified structured-tooling interface.
 
-## Entrypoint
-- `run.py`: The main CLI entrypoint that wires the Context Engine, Sandbox tools, and LLM Client into the ReAct Orchestrator loop.
+## Execution Modes
+Antigravity OS supports a dual-mode architecture bridged by a delegation workflow:
+
+1. **Interactive Mode (IDE Chat):** You chat with your IDE AI (burning IDE tokens) to design architecture. The IDE AI acts as the "Manager" by reading the `.agents/rules/`.
+2. **Autonomous Mode (Headless Engine):** The pure Python engine operates without a chat window. It uses the API keys in `.env` to execute cheap, rapid coding loops (burning `.env` tokens).
+
+**The Delegation Bridge:**
+To seamlessly switch from Interactive to Autonomous mode without memorizing terminal commands, tell your IDE AI to **"Delegate this task."** 
+This triggers `.agents/workflows/delegate-execution.md`, instructing the IDE AI to format your task and automatically execute `python src/orchestrator/run.py --task "..."` on your behalf.
 
 ## Governance
 This repository contains the master `.agents/` folder (SRE SOPs, Defensive Programming rules, Workflows). 
